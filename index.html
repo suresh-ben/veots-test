@@ -12,7 +12,13 @@
           style="width:100vw;"
           height="800"
           src="https://test120.veots.in"
-          onLoad={sendMessageToVeots}
-        ></iframe>
+        >
+      <script>
+        document.getElementById("veots-customer-website").contentWindow.postMessage(
+        { verification: window.location.href }, // Message data
+        "https://test120.veots.in" // Target origin, replace with actual origin in production
+        );
+      </script>
+        </iframe>
   </body>
 </html>
